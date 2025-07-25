@@ -1,0 +1,39 @@
+K-mer statistics for: 
+ - Hash 1: "/d/hd09/zhuohan/ectopic_rdna_proj/data/ref_no_rdna/hg002v0.7_no_rdna.fasta"
+ - Hash 2: "/d/hd09/zhuohan/ectopic_rdna_proj/data/U13369.1.fasta"
+
+Total K-mers in: 
+ - Hash 1: 5966008696
+ - Hash 2: 42779
+
+Distinct K-mers in:
+ - Hash 1: 2300585494
+ - Hash 2: 38470
+
+Total K-mers only found in:
+ - Hash 1: 5926009020
+ - Hash 2: 25675
+
+Distinct K-mers only found in:
+ - Hash 1: 2300571559
+ - Hash 2: 24535
+
+Shared K-mers:
+ - Total shared found in hash 1: 39999676
+ - Total shared found in hash 2: 17104
+ - Distinct shared K-mers: 13935
+
+Distance between spectra 1 and 2 (all k-mers):
+ - Manhattan distance: 2.30055e+09
+ - Euclidean distance: 2.00853e+09
+ - Cosine distance: 0.849296
+ - Canberra distance: 999.999
+ - Jaccard distance: 0.999983
+
+Distance between spectra 1 and 2 (shared k-mers):
+ - Manhattan distance: 22976
+ - Euclidean distance: 11790.5
+ - Cosine distance: 0.692476
+ - Canberra distance: 669.167
+ - Jaccard distance: 0.903749
+

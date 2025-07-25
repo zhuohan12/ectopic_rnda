@@ -1,0 +1,75 @@
+{
+    "main_dist": {
+        "k": 21,
+        "nb_peaks": 3,
+        "global_minima": {
+            "freq": 70,
+            "count": 26970
+        },
+        "global_maxima": {
+            "freq": 71,
+            "count": 27481
+        },
+        "mean_freq": 147,
+        "peaks": [
+            {
+                "mean_freq": 71.00000012655865,
+                "stddev": 28.626326895137055,
+                "count": 7291,
+                "volume": 519917
+            },
+            {
+                "mean_freq": 140.0000000570958,
+                "stddev": 61.6333970230498,
+                "count": 6450,
+                "volume": 985345
+            },
+            {
+                "mean_freq": 355.00000000108633,
+                "stddev": 163.21466973475455,
+                "count": 706,
+                "volume": 229991
+            }
+        ],
+        "hom_peak": {
+            "freq": 71,
+            "index": 1
+        },
+        "est_genome_size": 3180580,
+        "est_het_rate": 0.0
+    },
+    "completeness": 0.03639275056408763,
+    "spectra_0x": {
+        "k": 21,
+        "nb_peaks": 3,
+        "global_minima": {
+            "freq": 70,
+            "count": 26957
+        },
+        "global_maxima": {
+            "freq": 71,
+            "count": 27468
+        },
+        "mean_freq": 147,
+        "peaks": [
+            {
+                "mean_freq": 71.00000012836988,
+                "stddev": 28.626326851185805,
+                "count": 7288,
+                "volume": 519696
+            },
+            {
+                "mean_freq": 140.00000005423192,
+                "stddev": 61.63339682339695,
+                "count": 6447,
+                "volume": 984795
+            },
+            {
+                "mean_freq": 355.0000001562569,
+                "stddev": 163.21466937965474,
+                "count": 704,
+                "volume": 229477
+            }
+        ]
+    }
+}
