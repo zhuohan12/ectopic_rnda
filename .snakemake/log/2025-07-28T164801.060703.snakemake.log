@@ -1,0 +1,7 @@
+Building DAG of jobs...
+MissingInputException in rule all in file /d/hd09/zhuohan/ectopic_rdna_proj/Snakefile, line 12:
+Missing input files for rule all:
+    affected files:
+        hg38_kmer_aligned.sam
+        hg002_kmer_aligned.sam
+        chm13_kmer_aligned.sam

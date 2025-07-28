@@ -12,10 +12,11 @@ target="${3:-/d/hd09/zhuohan/ectopic_rdna_proj/data/U13369.1.fasta}"  # Default 
 
 mkdir -p "$outdir"
 
-for k in {17..19..2}
+for k in {47..49..2}
 do
     prefix="$(basename "$background" .fa)_comp_k${k}"
     kat comp -m $k -H 10000000000 -t 16 \
         -o "$outdir/$prefix" \
         "$background" "$target"
 done
+ 

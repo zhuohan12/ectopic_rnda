@@ -1,0 +1,128 @@
+Kmer Analysis Toolkit (KAT) V2.4.2
+
+Running KAT in COMP mode
+------------------------
+
+Input 1 is a sequence file.  Counting kmers for input 1 (/d/hd09/zhuohan/ectopic_rdna_proj/data/ref_no_rdna/hg38-rDNA_v1.0_no_rdna.fa) ... done.  Time taken: 288.5s
+
+Input 2 is a sequence file.  Counting kmers for input 2 (/d/hd09/zhuohan/ectopic_rdna_proj/data/U13369.1.fasta) ... done.  Time taken: 0.1s
+
+Comparing hashes ... done.  Time taken: 195.2s
+
+Merging results ... done.  Time taken: 0.4s
+
+Saving results to disk ... done.  Time taken: 0.2s
+
+
+Summary statistics
+------------------
+
+K-mer statistics for: 
+ - Hash 1: "/d/hd09/zhuohan/ectopic_rdna_proj/data/ref_no_rdna/hg38-rDNA_v1.0_no_rdna.fa"
+ - Hash 2: "/d/hd09/zhuohan/ectopic_rdna_proj/data/U13369.1.fasta"
+
+Total K-mers in: 
+ - Hash 1: 3048531408
+ - Hash 2: 42742
+
+Distinct K-mers in:
+ - Hash 1: 2385630813
+ - Hash 2: 39377
+
+Total K-mers only found in:
+ - Hash 1: 3037880809
+ - Hash 2: 35766
+
+Distinct K-mers only found in:
+ - Hash 1: 2385625321
+ - Hash 2: 33885
+
+Shared K-mers:
+ - Total shared found in hash 1: 10650599
+ - Total shared found in hash 2: 6976
+ - Distinct shared K-mers: 5492
+
+Distance between spectra 1 and 2 (all k-mers):
+ - Manhattan distance: 2.38559e+09
+ - Euclidean distance: 2.25805e+09
+ - Cosine distance: 0.000124741
+ - Canberra distance: 999.999
+ - Jaccard distance: 0.999983
+
+Distance between spectra 1 and 2 (shared k-mers):
+ - Manhattan distance: 6112
+ - Euclidean distance: 3094.79
+ - Cosine distance: 0.0714886
+ - Canberra distance: 465.5
+ - Jaccard distance: 0.715021
+
+Creating plot(s) ... done.  Time taken: 1.7s
+
+Analysing peaks for spectra copy number matrix
+----------------------------------------------
+
+Analysing distributions for: /d/hd09/zhuohan/ectopic_rdna_proj/results/hg38-rdna_v1.0_no_rdna/kat.k25-main.mx ... 
+Analysing full spectra
+
+Analysing spectra with copy number 0
+
+Analysing spectra with copy number 1
+Can't optimise peaks because none are defined.
+Analysing spectra with copy number 2
+Can't optimise peaks because none are defined.
+Analysing spectra with copy number 3
+
+Analysed spectra for all requested copy numbers.
+done.  Time taken:  3.7s
+
+Main spectra statistics
+-----------------------
+K-value used: 25
+Peaks in analysis: 3
+Global minima @ Frequency=97x (5358)
+Global maxima @ Frequency=98x (5481)
+Overall mean k-mer frequency: 175x
+
+  Index    Left    Mean    Right    StdDev    Max    Volume  Description
+-------  ------  ------  -------  --------  -----  --------  -------------
+      1   15.86      98   180.14     41.07   1422    145192  1X
+      2   19.7      194   368.3      87.15   1257    271116  2X
+      3   29.93     392   754.07    181.04     92     29649  4X
+
+Calculating genome statistics
+-----------------------------
+Assuming that homozygous peak is the largest in the spectra with frequency of: 98x
+Homozygous peak index: 1
+CAUTION: the following estimates are based on having a clean spectra and having identified the correct homozygous peak!
+Estimated genome size: 0.78 Mbp
+Estimated assembly completeness: 0.09%
+
+Breakdown of copy number composition for each peak
+----------------------------------------------------
+
+---- Report for f=98.000 (total elements 145050)----
+ 0x: 100.00% (145050 elements at f=98.00)
+ 1x: No significant content
+ 2x: No significant content
+ 3x: No significant content
+
+---- Report for f=194.000 (total elements 270759)----
+ 0x: 100.00% (270759 elements at f=194.00)
+ 1x: No significant content
+ 2x: No significant content
+ 3x: No significant content
+
+---- Report for f=392.000 (total elements 29529)----
+ 0x: 100.00% (29529 elements at f=392.00)
+ 1x: No significant content
+ 2x: No significant content
+ 3x: No significant content
+
+Creating plots
+--------------
+
+Plotting K-mer frequency distributions for general spectra ... done.
+Plotting K-mer frequency distributions for 0x ... done.
+
+
+malloc_consolidate(): unaligned fastbin chunk detected

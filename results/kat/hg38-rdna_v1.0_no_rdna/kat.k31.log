@@ -1,0 +1,139 @@
+Kmer Analysis Toolkit (KAT) V2.4.2
+
+Running KAT in COMP mode
+------------------------
+
+Input 1 is a sequence file.  Counting kmers for input 1 (/d/hd09/zhuohan/ectopic_rdna_proj/data/ref_no_rdna/hg38-rDNA_v1.0_no_rdna.fa) ... done.  Time taken: 222.7s
+
+Input 2 is a sequence file.  Counting kmers for input 2 (/d/hd09/zhuohan/ectopic_rdna_proj/data/U13369.1.fasta) ... done.  Time taken: 0.1s
+
+Comparing hashes ... done.  Time taken: 183.7s
+
+Merging results ... done.  Time taken: 0.4s
+
+Saving results to disk ... done.  Time taken: 0.2s
+
+
+Summary statistics
+------------------
+
+K-mer statistics for: 
+ - Hash 1: "/d/hd09/zhuohan/ectopic_rdna_proj/data/ref_no_rdna/hg38-rDNA_v1.0_no_rdna.fa"
+ - Hash 2: "/d/hd09/zhuohan/ectopic_rdna_proj/data/U13369.1.fasta"
+
+Total K-mers in: 
+ - Hash 1: 3048519325
+ - Hash 2: 42688
+
+Distinct K-mers in:
+ - Hash 1: 2503649318
+ - Hash 2: 40219
+
+Total K-mers only found in:
+ - Hash 1: 3044821005
+ - Hash 2: 38942
+
+Distinct K-mers only found in:
+ - Hash 1: 2503646227
+ - Hash 2: 37128
+
+Shared K-mers:
+ - Total shared found in hash 1: 3698320
+ - Total shared found in hash 2: 3746
+ - Distinct shared K-mers: 3091
+
+Distance between spectra 1 and 2 (all k-mers):
+ - Manhattan distance: 2.50361e+09
+ - Euclidean distance: 2.3822e+09
+ - Cosine distance: 7.23519e-05
+ - Canberra distance: 1000
+ - Jaccard distance: 0.999984
+
+Distance between spectra 1 and 2 (shared k-mers):
+ - Manhattan distance: 3532
+ - Euclidean distance: 1795.99
+ - Cosine distance: 0.0640747
+ - Canberra distance: 353.969
+ - Jaccard distance: 0.727198
+
+Creating plot(s) ... done.  Time taken: 1.7s
+
+Analysing peaks for spectra copy number matrix
+----------------------------------------------
+
+Analysing distributions for: /d/hd09/zhuohan/ectopic_rdna_proj/results/hg38-rdna_v1.0_no_rdna/kat.k31-main.mx ... 
+Analysing full spectra
+
+Analysing spectra with copy number 0
+
+Analysing spectra with copy number 1
+Can't optimise peaks because none are defined.
+Analysing spectra with copy number 2
+
+Analysing spectra with copy number 3
+
+Analysed spectra for all requested copy numbers.
+done.  Time taken:  5.1s
+
+Main spectra statistics
+-----------------------
+K-value used: 31
+Peaks in analysis: 3
+Global minima @ Frequency=30x (53343)
+Global maxima @ Frequency=32x (56488)
+Overall mean k-mer frequency: 66x
+
+  Index    Left    Mean    Right    StdDev    Max    Volume  Description
+-------  ------  ------  -------  --------  -----  --------  -------------
+      1    9.75      32    54.25     11.13  19645    546997  1X
+      2   11.14      62   112.86     25.43  10771    681904  2X
+      3   19.78     160   300.22     70.11   1308    227444  5X
+
+Calculating genome statistics
+-----------------------------
+Assuming that homozygous peak is the largest in the spectra with frequency of: 32x
+Homozygous peak index: 1
+CAUTION: the following estimates are based on having a clean spectra and having identified the correct homozygous peak!
+Estimated genome size: 2.59 Mbp
+Estimated assembly completeness: 0.03%
+
+Breakdown of copy number composition for each peak
+----------------------------------------------------
+
+---- Report for f=32.000 (total elements 546909)----
+ 0x: 100.00% (546909 elements at f=32.00)
+ 1x: No significant content
+ 2x: No significant content
+ 3x: No significant content
+
+---- Report for f=62.000 (total elements 681651)----
+ 0x: 100.00% (681651 elements at f=62.00)
+ 1x: No significant content
+ 2x: No significant content
+ 3x: No significant content
+
+---- Report for f=160.000 (total elements 227252)----
+ 0x: 100.00% (227252 elements at f=160.00)
+ 1x: No significant content
+ 2x: No significant content
+ 3x: No significant content
+
+Creating plots
+--------------
+
+Plotting K-mer frequency distributions for general spectra ... done.
+Plotting K-mer frequency distributions for 0x ... done.
+
+
+Error: signal 11:
+Stack trace:
+kat(+0x8388c)[0x5bc452dec88c]
+/lib/x86_64-linux-gnu/libc.so.6(+0x45330)[0x7759aa845330]
+/lib/x86_64-linux-gnu/libc.so.6(+0xa9c5d)[0x7759aa8a9c5d]
+/lib/x86_64-linux-gnu/libc.so.6(+0xaada5)[0x7759aa8aada5]
+/lib/x86_64-linux-gnu/libc.so.6(+0xab43a)[0x7759aa8ab43a]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_free+0x7e)[0x7759aa8addae]
+/home/zhuohan/miniconda3/envs/snakemake-env/lib/python3.6/site-packages/matplotlib/backends/_backend_agg.cpython-36m-x86_64-linux-gnu.so(+0x2f5de)[0x7753e21535de]
+/home/zhuohan/miniconda3/envs/snakemake-env/lib/python3.6/site-packages/matplotlib/backends/_backend_agg.cpython-36m-x86_64-linux-gnu.so(+0x2f659)[0x7753e2153659]
+/home/zhuohan/miniconda3/envs/snakemake-env/lib/python3.6/site-packages/matplotlib/backends/_backend_agg.cpython-36m-x86_64-linux-gnu.so(+0x1f3f3)[0x7753e21433f3]
+/home/zhuohan/miniconda3/envs/snakemake-env/bin/../lib/libpython3.6m.so.1.0(+0x18b617)[0x7759aad8b617]

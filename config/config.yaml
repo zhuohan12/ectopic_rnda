@@ -1,0 +1,26 @@
+# KAT parameters
+kat:
+  k_values: [47, 49]
+  ref: "/d/hd09/zhuohan/ectopic_rdna_proj/data/ref_no_rdna/hg38-rDNA_v1.0_no_rdna.fa"
+  rdna: "/d/hd09/zhuohan/ectopic_rdna_proj/data/U13369.1.fasta"
+  output_dir: "/d/hd09/zhuohan/ectopic_rdna_proj/results/"
+  hash_size: 10000000000
+  threads: 8
+
+
+# K-mer Map Parameters
+kmer_map:
+  output_dir: "/d/hd09/zhuohan/ectopic_rdna_proj/results/k21_alignment/"
+  jellyfish:
+    k: 21
+    hash_size: 100000000
+    threads: 8
+    rdna_path: "/d/hd09/zhuohan/ectopic_rdna_proj/data/U13369.1.fasta"
+
+  
+  minimap:
+    ref_names: ["hg38", "chm13", "hg002"]
+    ref_paths: ["/d/hd09/zhuohan/ectopic_rdna_proj/data/ref_no_rdna/hg38-rDNA_v1.0_no_rdna.fa",
+               "/d/hd09/zhuohan/ectopic_rdna_proj/data/ref_no_rdna/hs1-rDNA_v1.0_no_rdna.fa", 
+               "/d/hd09/zhuohan/ectopic_rdna_proj/data/ref_no_rdna/hg002v0.7_no_rdna.fasta"]
+    

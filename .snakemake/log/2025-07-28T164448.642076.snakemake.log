@@ -1,0 +1,4 @@
+SyntaxError:
+Only input files can be specified as functions
+  File "/d/hd09/zhuohan/ectopic_rdna_proj/Snakefile", line 5, in <module>
+  File "/d/hd09/zhuohan/ectopic_rdna_proj/workflow/map_kmers.smk", line 42, in <module>

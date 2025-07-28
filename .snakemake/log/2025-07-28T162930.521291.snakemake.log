@@ -1,0 +1,107 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 8
+Rules claiming more threads will be scaled down.
+Job stats:
+job                count
+---------------  -------
+all                    1
+jellyfish_count        1
+jellyfish_dump         1
+minimap                3
+total                  6
+
+Select jobs to execute...
+
+[Mon Jul 28 16:29:30 2025]
+rule jellyfish_count:
+    input: /d/hd09/zhuohan/ectopic_rdna_proj/data/U13369.1.fasta
+    output: mer_counts_k21.jf
+    jobid: 3
+    reason: Missing output files: mer_counts_k21.jf
+    resources: tmpdir=/tmp
+
+
+        jellyfish count -m 21 -s 100000000 -t 8 -C /d/hd09/zhuohan/ectopic_rdna_proj/data/U13369.1.fasta -o mer_counts_k21.jf
+        
+[Mon Jul 28 16:29:31 2025]
+Finished job 3.
+1 of 6 steps (17%) done
+Select jobs to execute...
+
+[Mon Jul 28 16:29:31 2025]
+rule jellyfish_dump:
+    input: mer_counts_k21.jf
+    output: mer_counts_k21.fa
+    jobid: 2
+    reason: Missing output files: mer_counts_k21.fa; Input files updated by another job: mer_counts_k21.jf
+    resources: tmpdir=/tmp
+
+
+        jellyfish dump mer_counts_k21.jf > mer_counts_k21.fa
+        
+[Mon Jul 28 16:29:31 2025]
+Finished job 2.
+2 of 6 steps (33%) done
+Select jobs to execute...
+
+[Mon Jul 28 16:29:31 2025]
+rule minimap:
+    input: mer_counts_k21.fa, /d/hd09/zhuohan/ectopic_rdna_proj/data/ref_no_rdna/hg38-rDNA_v1.0_no_rdna.fa
+    output: hg38_kmer_aligned.sam
+    jobid: 1
+    reason: Missing output files: hg38_kmer_aligned.sam; Input files updated by another job: mer_counts_k21.fa
+    wildcards: ref=hg38
+    resources: tmpdir=/tmp
+
+
+        minimap2 -a /d/hd09/zhuohan/ectopic_rdna_proj/data/ref_no_rdna/hg38-rDNA_v1.0_no_rdna.fa mer_counts_k21.fa > hg38_kmer_aligned.sam
+        
+
+[Mon Jul 28 16:29:31 2025]
+rule minimap:
+    input: mer_counts_k21.fa, /d/hd09/zhuohan/ectopic_rdna_proj/data/ref_no_rdna/hs1-rDNA_v1.0_no_rdna.fa
+    output: chm13_kmer_aligned.sam
+    jobid: 4
+    reason: Missing output files: chm13_kmer_aligned.sam; Input files updated by another job: mer_counts_k21.fa
+    wildcards: ref=chm13
+    resources: tmpdir=/tmp
+
+
+        minimap2 -a /d/hd09/zhuohan/ectopic_rdna_proj/data/ref_no_rdna/hs1-rDNA_v1.0_no_rdna.fa mer_counts_k21.fa > chm13_kmer_aligned.sam
+        
+
+[Mon Jul 28 16:29:31 2025]
+rule minimap:
+    input: mer_counts_k21.fa, /d/hd09/zhuohan/ectopic_rdna_proj/data/ref_no_rdna/hg002v0.7_no_rdna.fasta
+    output: hg002_kmer_aligned.sam
+    jobid: 5
+    reason: Missing output files: hg002_kmer_aligned.sam; Input files updated by another job: mer_counts_k21.fa
+    wildcards: ref=hg002
+    resources: tmpdir=/tmp
+
+
+        minimap2 -a /d/hd09/zhuohan/ectopic_rdna_proj/data/ref_no_rdna/hg002v0.7_no_rdna.fasta mer_counts_k21.fa > hg002_kmer_aligned.sam
+        
+[Mon Jul 28 16:30:21 2025]
+Finished job 4.
+3 of 6 steps (50%) done
+[Mon Jul 28 16:30:23 2025]
+Finished job 1.
+4 of 6 steps (67%) done
+[Mon Jul 28 16:31:08 2025]
+Finished job 5.
+5 of 6 steps (83%) done
+Select jobs to execute...
+
+[Mon Jul 28 16:31:08 2025]
+localrule all:
+    input: hg38_kmer_aligned.sam, chm13_kmer_aligned.sam, hg002_kmer_aligned.sam
+    jobid: 0
+    reason: Input files updated by another job: hg002_kmer_aligned.sam, chm13_kmer_aligned.sam, hg38_kmer_aligned.sam
+    resources: tmpdir=/tmp
+
+[Mon Jul 28 16:31:08 2025]
+Finished job 0.
+6 of 6 steps (100%) done
+Complete log: .snakemake/log/2025-07-28T162930.521291.snakemake.log

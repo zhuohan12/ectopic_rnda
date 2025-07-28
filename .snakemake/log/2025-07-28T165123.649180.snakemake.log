@@ -1,0 +1,46 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 8
+Rules claiming more threads will be scaled down.
+Job stats:
+job                count
+---------------  -------
+all                    1
+jellyfish_count        1
+jellyfish_dump         1
+minimap                3
+total                  6
+
+Select jobs to execute...
+
+[Mon Jul 28 16:51:23 2025]
+rule jellyfish_count:
+    input: /d/hd09/zhuohan/ectopic_rdna_proj/data/U13369.1.fasta
+    output: /d/hd09/zhuohan/ectopic_rdna_proj/results/k21_alignment/mer_counts_k21.jf
+    jobid: 3
+    reason: Missing output files: /d/hd09/zhuohan/ectopic_rdna_proj/results/k21_alignment/mer_counts_k21.jf
+    resources: tmpdir=/tmp
+
+
+        mkdir -p /d/hd09/zhuohan/ectopic_rdna_proj/results/k21_alignment
+        jellyfish count -m 21 -s 100000000 -t 8 -C /d/hd09/zhuohan/ectopic_rdna_proj/data/U13369.1.fasta -o /d/hd09/zhuohan/ectopic_rdna_proj/results/k21_alignment/mer_counts_k21.jf
+        
+[Mon Jul 28 16:51:24 2025]
+Finished job 3.
+1 of 6 steps (17%) done
+Select jobs to execute...
+
+[Mon Jul 28 16:51:24 2025]
+rule jellyfish_dump:
+    input: /d/hd09/zhuohan/ectopic_rdna_proj/results/k21_alignment/mer_counts_k21.jf
+    output: /d/hd09/zhuohan/ectopic_rdna_proj/results/k21_alignment/mer_counts_k21.fa
+    jobid: 2
+    reason: Missing output files: /d/hd09/zhuohan/ectopic_rdna_proj/results/k21_alignment/mer_counts_k21.fa; Input files updated by another job: /d/hd09/zhuohan/ectopic_rdna_proj/results/k21_alignment/mer_counts_k21.jf
+    resources: tmpdir=/tmp
+
+RuleException in rule jellyfish_dump in file /d/hd09/zhuohan/ectopic_rdna_proj/workflow/map_kmers.smk, line 28:
+AttributeError: module 'posixpath' has no attribute 'dirname(output', when formatting the following:
+
+        mkdir -p {os.path.dirname(output.fa)}
+        jellyfish dump {input.jf} > {output.fa}
+        

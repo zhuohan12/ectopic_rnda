@@ -1,0 +1,4 @@
+NameError in file /d/hd09/zhuohan/ectopic_rdna_proj/workflow/map_kmers.smk, line 23:
+name 'output_dir' is not defined
+  File "/d/hd09/zhuohan/ectopic_rdna_proj/Snakefile", line 5, in <module>
+  File "/d/hd09/zhuohan/ectopic_rdna_proj/workflow/map_kmers.smk", line 23, in <module>
