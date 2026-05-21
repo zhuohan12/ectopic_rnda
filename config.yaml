@@ -1,0 +1,38 @@
+dirs:
+  intermediate: "data/intermediate"
+  output: "data/output"
+  rdna: "data/raw/rdna"
+  masked_ref: "data/reference/masked_ref"
+
+kmer_set:
+  k: 21
+  # Path to the rDNA-masked reference genome (CHM13/hs1 with rDNA removed)
+  # Download hs1-rDNA_v1.0_no_rdna.fa from: https://github.com/marbl/CHM13
+  ref_path: "/path/to/hs1-rDNA_v1.0_no_rdna.fa"
+  ref_name: "hs1"
+  # Path to rDNA reference sequence (e.g. KY962518.1 from NCBI)
+  rdna_path: "/path/to/rdna_reference.fasta"
+  num_threads: 32
+
+sr_pipe:
+  # Directory containing input FASTQ.gz files ({sample}_1.fastq.gz, {sample}_2.fastq.gz)
+  sr_dir: "/path/to/fastq_dir"
+  # Only needed for CRAM input (run_sr_pipeline_cram.smk): path to hg38/GRCh38 FASTA
+  cram_ref_path: "/path/to/hg38.fasta"
+  kmer_list: "data/output/unique_rdna_k21.txt"
+  min_kmers: 2
+  # Path to the rDNA-containing reference genome for final mapping
+  ref_path: "/path/to/hs1-rDNA_v1.0.fa"
+  num_threads: 32
+
+samples:
+- SRR28305159
+- SRR28305162
+- SRR28305165
+- SRR28305168
+- SRR28305171
+- SRR28305174
+- SRR28305178
+- SRR28305181
+- SRR28305184
+- SRR28305187
