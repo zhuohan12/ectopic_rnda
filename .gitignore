@@ -1,1 +1,8 @@
 data/
+.DS_Store
+._.DS_Store
+.snakemake/
+.vscode/
+results/
+PUBLISHING_GUIDE.md
+archive/
